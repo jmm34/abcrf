@@ -45,7 +45,7 @@ following components:
 \references{
 Pudlo P., Marin J.-M., Estoup A., Cornuet J.-M., Gautier M. and Robert, C. P. (2016)
 \emph{Reliable ABC model choice via random forests} Bioinformatics
-\url{https://doi.org/10.1093/bioinformatics/btv684}
+\doi{10.1093/bioinformatics/btv684}
 
 Estoup A., Raynal L., Verdu P. and Marin J.-M. (2018)
 \emph{Model choice using Approximate Bayesian Computation and Random Forests: analyses based on model grouping to make inferences about the genetic history of Pygmy human populations} Jounal de la Société Française de Statistique

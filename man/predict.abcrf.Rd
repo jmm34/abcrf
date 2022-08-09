@@ -37,7 +37,7 @@ the regression random forest that estimates the posterior probability of the sel
 \references{
 Pudlo P., Marin J.-M., Estoup A., Cornuet J.-M., Gautier M. and Robert, C. P. (2016)
 \emph{Reliable ABC model choice via random forests} Bioinformatics
-\url{https://doi.org/10.1093/bioinformatics/btv684}
+\doi{10.1093/bioinformatics/btv684}
 }
 \seealso{
 \code{\link{abcrf}},

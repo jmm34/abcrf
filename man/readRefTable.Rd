@@ -28,5 +28,5 @@ A list with the following components:
 \references{
 Cornuet J.-M., Pudlo P., Veyssier J., Dehne-Garcia A., Gautier M., Leblois R., Marin J.-M. and Estoup A. (2014)
 \emph{DIYABC v2.0: a software to make Approximate Bayesian Computation inferences about population history using Single Nucleotide Polymorphism, DNA sequence and microsatellite data} Bioinformatics
-\url{https://doi.org/10.1093/bioinformatics/btn514}
+\doi{10.1093/bioinformatics/btn514}
 }

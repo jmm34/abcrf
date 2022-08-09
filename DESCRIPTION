@@ -1,8 +1,8 @@
 Package: abcrf
 Type: Package
 Title: Approximate Bayesian Computation via Random Forests
-Version: 1.8.1
-Date: 2019-10-31
+Version: 1.9
+Date: 2022-08-09
 Description: Performs Approximate Bayesian Computation (ABC) model choice and parameter inference via random forests.
   Pudlo P., Marin J.-M., Estoup A., Cornuet J.-M., Gautier M. and Robert C. P. (2016) <doi:10.1093/bioinformatics/btv684>.
   Estoup A., Raynal L., Verdu P. and Marin J.-M. <http://journal-sfds.fr/article/view/709>.
@@ -22,4 +22,3 @@ Author: Jean-Michel Marin [aut, cre],
   Pierre Pudlo [aut],
   Christian P. Robert [ctb],
   Arnaud Estoup [ctb]
-Packaged: 2022-08-05 08:15:04 UTC; jmm

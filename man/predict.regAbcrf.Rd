@@ -44,7 +44,7 @@ An object of class \code{regAbcrfpredict}, which is a list with the following co
 \references{
 Raynal L., Marin J.-M. Pudlo P., Ribatet M., Robert C. P. and Estoup, A. (2019)
 \emph{ABC random forests for Bayesian parameter inference} Bioinformatics
-\url{https://doi.org/10.1093/bioinformatics/bty867}
+\doi{10.1093/bioinformatics/bty867}
 }
 \seealso{
 \code{\link{regAbcrf}},

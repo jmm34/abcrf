@@ -15,12 +15,12 @@ ncores= if(paral) max(detectCores()-1,1) else 1)
 \item{ncores}{the number of CPU cores to use for the random forest predictions. If paral=TRUE, it is used the number of CPU cores minus 1. If ncores is not specified and \code{\link{detectCores}} does not detect the number of CPU cores with success then 1 core is used.}
 }
 \value{
-\item{}{a matrix with 2 columns: the number of trees and the out-of-bag errors. Errors are computed from 40 trees to the total number.}
+A matrix with 2 columns: the number of trees and the out-of-bag errors. Errors are computed from 40 trees to the total number.
 }
 \references{
 Pudlo P., Marin J.-M., Estoup A., Cornuet J.-M., Gautier M. and Robert, C. P. (2016)
 \emph{Reliable ABC model choice via random forests} Bioinformatics
-\url{https://doi.org/10.1093/bioinformatics/btv684}
+\doi{10.1093/bioinformatics/btv684}
 }
 \seealso{
 \code{\link{abcrf}},
