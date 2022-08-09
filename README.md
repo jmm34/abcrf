@@ -1,4 +1,5 @@
-# abcrf
+# abcrf version 1.9
+R library to perform Approximate Bayesian Computation via Random Forests 
 
 R library to perform Approximate Bayesian Computation via Random Forests  
 
