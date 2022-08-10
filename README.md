@@ -6,3 +6,4 @@ To install the abcrf package
 install_github("jmm34/abcrf")
 - you can download the file **abcrf_1.9.tar.gz** and use the command:  
 install.packages("abcrf_1.9.tar.gz", repos = NULL, type = "source")
+- the package is also available on the CRAN
