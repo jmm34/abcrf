@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{snp}\n\\alias{snp}\n\\alias{snp.obs}\n\\title{A simulated example in population genetics}\n\n\\description{\nThe simulated example of population genetics with SNP loci used in Pudlo et al.\n(2016): \\code{snp} contains the reference table on which to perform ABC model choice, it also contains the simulated parameters to perform regression random forest.\n\\code{snp.obs} contains two pseudo-observed data sets. The first one\n(\\code{favorable}) should be easily allocated to a model, while that is not the case for the second one (\\code{unfavorable}).\n}\n\\usage{\ndata(snp)\ndata(snp.obs)\n}\n\\format{\n\\code{snp} is a list containing an ABC reference table of 15,000\nsimulations from a Bayesian prior predictive model (see Pudlo et al., 2016, for a description of the model choice issue). The first element, named \\code{modindex} is a \\code{factor} containing the model indices, the second element, \\code{param}, is a data frame with seven simulated parameters. The last element of this list, named \\code{sumsta}, contains the reference table on which to perform ABC model choice and parameter estimation.\n\n\\code{snp.obs} is a data frame containing the summary statistics of two pseudo-observed data sets.\n}\n\\source{\nPudlo, P., Marin, J.-M., Estoup, A., Cornuet, J.-M., Gautier, M. and Robert, C.P. (2016)\n\\emph{Reliable ABC model choice via random forests} Bioinformatics\n\\url{http://bioinformatics.oxfordjournals.org/content/32/6/859}\n}\n\\examples{\ndata(snp)\ndata(snp.obs)\n}\n",
+    "created" : 1480513477203.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3554362214",
+    "id" : "B22C731E",
+    "lastKnownWriteTime" : 1480513552,
+    "last_content_update" : 1480513552326,
+    "path" : "~/Dropbox/ODOF/abcrf 1.4 avec ranger/abcrf_1.4/man/snp.Rd",
+    "project_path" : "man/snp.Rd",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

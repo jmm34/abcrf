@@ -1,0 +1,32 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/Louis Raynal/OneDrive/These/Recherche/Amélioration de abcRf/abcrf/src/findweightsAmelioree.c",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "findweightsAmelioree(double *, int *, double *, double *, int *, int *, int *, double *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@findweightsAmelioree"
+            }
+        ],
+        "file" : "C:/Users/Louis Raynal/OneDrive/These/Recherche/Amélioration de abcRf/abcrf/src/findweightsAmelioree.c",
+        "file_last_write" : 1478784040
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/src/findweightsAmelioree.c",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "findweightsAmelioree(double *, int *, double *, double *, int *, int *, int *, double *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@findweightsAmelioree"
+            }
+        ],
+        "file" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/src/findweightsAmelioree.c",
+        "file_last_write" : 1479911960
+    }
+]

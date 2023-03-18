@@ -1,0 +1,38 @@
+library(abcrf)
+
+setwd("E:/These 2016-2017/Articles/Article 4 - Desert Locust inference with ABC-RF/Code pour JdS/informed")
+# setwd("/nfs/work/defimag/raynal/Criquet/informed")
+
+data.name<-"reftable1.bin"
+data.root<-sub("\\..*$", "", data.name)
+data <- readRefTable(filename = data.name, header="header.txt")
+index1 <- data$scenarios == 1
+poi1<-data$params[index1, "tca"]#to modify
+poi2<-data$params[index1, "tdiv"]#to modify
+poi<-poi1/poi2#to modify
+data.poi <- data.frame(poi, data$stats[index1, ])
+nref <- 10000
+data.poi <- data.poi[1:nref,]
+ntree<- 500
+nbrCoeur <- 7
+
+set.seed(1)
+######### Forest construction and Prediction on a single statobs dataset
+model.poi <- regAbcrf(formula = poi~., data = data.poi, ntree=ntree, paral = TRUE, ncores=nbrCoeur)
+obs.poi <- read.table("statobs.txt", header=TRUE)
+start.predict<- Sys.time()
+pred.obsPoi <- predict(object = model.poi, obs = obs.poi, training = data.poi,
+                       quantiles = c(0.05,0.95), paral = TRUE, paral.predict=TRUE, post.err.med = TRUE, ncores = nbrCoeur)
+stop.predict<-Sys.time()
+stop.predict-start.predict
+# start.predictOOB<- Sys.time()
+# predoob.Poi <- predictOOB(model.poi, data.poi, quantiles=c(0.05,0.95), paral=TRUE, ncores=nbrCoeur)
+# stop.predictOOB<-Sys.time()
+# stop.predictOOB-start.predictOOB
+df<-c(pred.obsPoi$expectation, pred.obsPoi$med, pred.obsPoi$quantiles[1], pred.obsPoi$quantiles[2],
+      pred.obsPoi$post.NMAE.med, pred.obsPoi$post.NMAE.mean, pred.obsPoi$prior.coverage,
+      pred.obsPoi$prior.NMAE.med, pred.obsPoi$prior.NMAE.mean, model.poi$model.rf$NMAE)
+var.names<-c("mean","median","q5","q95","post.NMAE.median","post.NMAE.mean",
+             "prior.NMAE.cov","prior.NMAE.median","prior.NMAE.mean", "prior.NMAE.mean.RF")
+write.table(t(df),file="tdiv.good.obs.table.csv",col.names = var.names, row.names = data.root)
+#gc()

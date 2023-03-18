@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1558022349822.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "945092968",
+    "id" : "60420B1",
+    "lastKnownWriteTime" : 1558023496,
+    "last_content_update" : 1558023496,
+    "path" : "E:/These 2016-2017/Articles/Article 4 - Desert Locust inference with ABC-RF/Code pour tester nouvelle version package 1.8 avec parall predictOOB/testErreurMariePierre.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "24,117",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

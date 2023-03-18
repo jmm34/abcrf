@@ -1,0 +1,19 @@
+Package: abcrf
+Type: Package
+Title: Approximate Bayesian Computation via Random Forests
+Version: 1.6
+Date: 2017-06-27
+Description: Performs Approximate Bayesian Computation (ABC) model choice and parameter inference via random forests.
+License: GPL (>= 2)
+LazyData: TRUE
+Imports: readr, MASS, matrixStats, ranger, parallel, stringr, Rcpp (>= 0.11.2)
+LinkingTo: Rcpp, RcppArmadillo
+Depends: R(>= 3.1)
+NeedsCompilation: yes
+Maintainer: Jean-Michel Marin <jean-michel.marin@umontpellier.fr>
+Repository: CRAN
+Author: Jean-Michel Marin [aut, cre],
+  Louis Raynal [aut],
+  Pierre Pudlo [aut],
+  Christian P. Robert [ctb],
+  Arnaud Estoup [ctb]

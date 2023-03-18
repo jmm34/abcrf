@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{plot.regAbcrf}\n\\alias{plot.regAbcrf}\n\\title{Plot of a reg-ABC-RF object}\n\\description{\n\\code{plot.regAbcrf} provides a variable importance plot used to construct the reg-ABC-RF object.\n}\n\\usage{\n\\method{plot}{regAbcrf}(x, n.var=min(30, length(x$model.rf$variable.importance) ), ... )\n}\n\\arguments{\n  \\item{x}{a \\code{\\link{regAbcrf}} object.}\n  \\item{n.var}{number of variables in the variable importance representation. The default value is equal to the minimum between 30 and the number of summary statistics.}\n \\item{\\dots}{additional graphical parameters to be passed on to \\code{\\link{variableImpPlot}}. }\n}\n\\references{\nMarin, J.-M., Raynal, L., Pudlo, P., Ribatet, M. and Robert, C.P. (2016)\n\\emph{ABC random forests for Bayesian parameter inference}\n\\url{http://arxiv.org/pdf/1605.05537v2.pdf}\n}\n\\seealso{\n\\code{\\link{regAbcrf}},\n\\code{\\link{predict.regAbcrf}},\n\\code{\\link{err.regAbcrf}},\n\\code{\\link{covRegAbcrf}},\n\\code{\\link{ranger}},\n\\code{\\link{densityPlot}}\n}\n\\examples{\ndata(snp)\nmodindex <- snp$modindex\nsumsta <- snp$sumsta[modindex == \"3\",]\nr <- snp$param$r[modindex == \"3\"]\nr <- r[1:500]\nsumsta <- sumsta[1:500,]\ndataTrain <- data.frame(r, sumsta)\nmodel.rf.r <- regAbcrf(r~., dataTrain, ntree=100)\nplot(model.rf.r)\n}\n",
+    "created" : 1480358470009.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1172524773",
+    "id" : "1C53C796",
+    "lastKnownWriteTime" : 1480358664,
+    "last_content_update" : 1480358662168,
+    "path" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/man/plot.regAbcrf.Rd",
+    "project_path" : "man/plot.regAbcrf.Rd",
+    "properties" : {
+    },
+    "relative_order" : 18,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

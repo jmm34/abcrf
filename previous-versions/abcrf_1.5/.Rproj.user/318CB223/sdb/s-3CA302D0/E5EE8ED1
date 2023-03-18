@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{variableImpPlot}\n\\alias{variableImpPlot}\n\\title{Variable importance plot from a random forest}\n\\usage{\nvariableImpPlot(object, \nn.var=min(30, length(object$model.rf$variable.importance)))\n}\n\\description{\n\\code{variableImpPlot} provides a dotchart of variable importance as measured by \\code{\\link{ranger}}.\n}\n\\arguments{\n\\item{object}{an \\code{abcrf} or \\code{regAbcrf} object.}\n\\item{n.var}{number of variables in the variable importance representation.}\n}\n\\value{\nInvisibly, the importance of the variables that were plotted.\n}\n\n\\seealso{\n\\code{\\link{abcrf}},\n\\code{\\link{plot.abcrf}},\n\\code{\\link{plot.regAbcrf}}\n}\n\n\\examples{\ndata(snp)\nmodindex <- snp$modindex[1:500]\nsumsta <- snp$sumsta[1:500,]\ndata1 <- data.frame(modindex, sumsta)\nmodel.rf <- abcrf(modindex~., data1, ntree=100)\nvariableImpPlot(model.rf)\n}\n",
+    "created" : 1480513555220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4133595263",
+    "id" : "E5EE8ED1",
+    "lastKnownWriteTime" : 1480514768,
+    "last_content_update" : 1480514768963,
+    "path" : "~/Dropbox/ODOF/abcrf 1.4 avec ranger/abcrf_1.4/man/variableImpPlot.Rd",
+    "project_path" : "man/variableImpPlot.Rd",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

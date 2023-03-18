@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{readRefTable}\n\\alias{readRefTable}\n\n\\title{Read a reference table simulated from DIYABC}\n\n\\description{\n\\code{readRefTable} reads a reference table simulated from DIYABC thanks to a .bin and a .txt file, respectively containing the reference table and its header.\n}\n\n\\usage{\nreadRefTable(filename = \"reftable.bin\", header = \"header.txt\")\n}\n\\arguments{\n\\item{filename}{a .bin file from DIYABC containing the reference table.}\n\\item{header}{a .txt file containing the header of the reference table in \\code{filename}.}\n}\n\\value{\nA list with the following components:\n\\item{nrec}{number of individuals of the reference table,}\n\\item{nscen}{number of scenarios in the reference table,}\n\\item{nrecscen}{number of individuals by scenario,}\n\\item{nparam}{number of parameters by scenario,}\n\\item{scenarios}{a vector of integers containing the scenario indices,}\n\\item{params}{a matrix with the parameters,}\n\\item{stats}{a matrix with the summary statistics.}\n}\n\\references{\nPudlo, P., Marin, J.-M., Estoup, A., Cornuet, J.-M., Gautier, M. and Robert, C.P. (2016)\n\\emph{Reliable ABC model choice via random forests} Bioinformatics\n\\url{http://bioinformatics.oxfordjournals.org/content/32/6/859}\n}",
+    "created" : 1479995751722.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2179036433",
+    "id" : "D8B029B1",
+    "lastKnownWriteTime" : 1480000550,
+    "last_content_update" : 1480000549788,
+    "path" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/man/readRefTable.Rd",
+    "project_path" : "man/readRefTable.Rd",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

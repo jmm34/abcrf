@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "densityPlot.regAbcrf <- \nfunction(object, obs, training,  main=\"Posterior density\", paral=FALSE, ncores= if(paral) max(detectCores()-1,1) else 1, ...)\n{\n    ### Checking arguments\n    if (!inherits(object, \"regAbcrf\")) \n      stop(\"object not of class regAbcrf\")\n  \n    if (!inherits(training, \"data.frame\"))\n      stop(\"training needs to be a data.frame object\")\n  \n    if (!inherits(obs, \"data.frame\")) \n      stop(\"obs needs to be a data.frame object\")\n    if (nrow(obs) == 0L || is.null(nrow(obs)))\n      stop(\"no data in obs\")\n    if (nrow(training) == 0L || is.null(nrow(training)))\n      stop(\"no simulation in the training reference table (response, sumstat)\")\n    if ( (!is.logical(paral)) && (length(paral) != 1L) )\n      stop(\"paral should be TRUE or FALSE\")\n    if( ncores > detectCores() || ncores < 1 )\n      stop(\"incorrect number of CPU cores\")\n    \n    x <- obs\n    if(!is.null(x)){\n      if(is.vector(x)){\n        x <- matrix(x,ncol=1)\n      }\n      if (nrow(x) == 0) \n        stop(\"obs has 0 rows\")\n      if (any(is.na(x))) \n        stop(\"missing values in obs\")\n    }  \n\n    # resp and sumsta recover\n  \n    mf <- match.call(expand.dots=FALSE)\n    mf <- mf[1]\n    mf$formula <- object$formula\n    mf$data <- training\n    mf[[1L]] <- as.name(\"model.frame\")\n    mf <- eval(mf, parent.frame() )\n    mt <- attr(mf, \"terms\")\n    resp <- model.response(mf)\n    \n    obj <- object$model.rf\n    inbag <- matrix(unlist(obj$inbag.counts, use.names=FALSE), ncol=obj$num.trees, byrow=FALSE)\n    \n    obj[[\"origNodes\"]] <- predict(obj, training, predict.all=TRUE, num.threads=ncores)$predictions\n    obj[[\"origObs\"]] <- model.response(mf)\n    \n    #####################\n    \n    origObs <- obj$origObs\n    origNodes <- obj$origNodes\n    \n    nodes <- predict(obj, x, predict.all=TRUE, num.threads=ncores )$predictions\n    ntree <- obj$num.trees\n    nobs <- object$model.rf$num.samples\n    nnew <- nrow(x)\n    \n    weightvec <- rep(0,nobs*nnew)\n    counti <- rep(0,nobs)\n    thres <- 5*.Machine$double.eps\n    result <- .C(\"findweightsAmelioree\",\n                 as.double(as.vector(origNodes)),\n                 as.integer(as.vector(inbag)),\n                 as.double(as.vector(nodes)),\n                 weightvec=as.double(weightvec),\n                 as.integer(nobs),\n                 as.integer(nnew),\n                 as.integer(ntree),\n                 as.double(thres),\n                 as.integer(counti),\n                 PACKAGE=\"abcrf\")\n    \n    weights <- matrix(result$weightvec, nrow= nobs)\n    weights.std <- weights/ntree\n    \n    for(i in 1:nnew){\n      plot(density(resp, weights=weights.std[,i], ...), main=main )\n      if(nnew>1 && i<nnew) readline(\"Press <ENTER> to Continue\")\n    }\n}\n\ndensityPlot <-\n  function(...) UseMethod(\"densityPlot\")",
+    "created" : 1479997286786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1843342827",
+    "id" : "1E7CAB06",
+    "lastKnownWriteTime" : 1479997948,
+    "last_content_update" : 1479997946242,
+    "path" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/R/densityPlot.R",
+    "project_path" : "R/densityPlot.R",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

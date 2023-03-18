@@ -1,0 +1,15 @@
+{
+    "args" : [
+        "-IC:/Program Files/RStudio/resources/libclang/builtin-headers/3.4",
+        "-Ic:/Rtools/mingw_64/x86_64-w64-mingw32/include",
+        "-Ic:/Rtools/mingw_64/x86_64-w64-mingw32/include/c++",
+        "-Ic:/Rtools/mingw_64/x86_64-w64-mingw32/include/c++/x86_64-w64-mingw32",
+        "-IC:/Users/LOUISR~1/DOCUME~1/R/WIN-LI~1/3.5/Rcpp/include",
+        "-IC:/Users/LOUISR~1/DOCUME~1/R/WIN-LI~1/3.5/RCPPAR~1/include",
+        "-IC:/PROGRA~1/R/R-35~1.1/include",
+        "-DNDEBUG"
+    ],
+    "hash" : "1560444418",
+    "is_cpp" : true,
+    "pch" : "Rcpp"
+}

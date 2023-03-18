@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "plot.regAbcrf <- function(x, n.var=min(30, length(x$model.rf$variable.importance)), ...){\n  if (!inherits(x, \"regAbcrf\")) \n    stop(\"First argument not of class regAbcrf\")\n  variableImpPlot(x, n.var=n.var)\n}\n",
+    "created" : 1480514835896.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2071457353",
+    "id" : "855C76B0",
+    "lastKnownWriteTime" : 1480514844,
+    "last_content_update" : 1480514844156,
+    "path" : "~/Dropbox/ODOF/abcrf 1.4 avec ranger/abcrf_1.4/R/plot.regAbcrf.R",
+    "project_path" : "R/plot.regAbcrf.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

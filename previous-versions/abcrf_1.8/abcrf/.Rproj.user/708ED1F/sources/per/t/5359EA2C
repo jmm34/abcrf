@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560444782897.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3858714754",
+    "id" : "5359EA2C",
+    "lastKnownWriteTime" : 1560444918,
+    "last_content_update" : 1560444917685,
+    "path" : "E:/These 2016-2017/Recherche/abcrf packages/abcrf_1.8_v4_pourCran_Parallelized/abcrf/src/findweights_train.cpp",
+    "project_path" : "src/findweights_train.cpp",
+    "properties" : {
+        "cursorPosition" : "9,30",
+        "scrollLine" : "1"
+    },
+    "relative_order" : 29,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1558020822595.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2379215646",
+    "id" : "5E05E451",
+    "lastKnownWriteTime" : 1558069882,
+    "last_content_update" : 1558069882,
+    "path" : "E:/These 2016-2017/Recherche/abcrf packages/abcrf_1.8_v4_pourCran_Parallelized/abcrf/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "4"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

@@ -1,0 +1,6 @@
+"0","hc <- hcut(mo13.daily)"
+"0","d <- dist(mo13.daily)"
+"0","co <- order.optimal(d, hc$merge)"
+"0","hc$merge <- co$merge"
+"0","hc$order <- co$order"
+"0","plot(hc,hang=-1,cex=1,sub="""",xlab="""",main=""Dendrogramme Montpellier 2013"")"

@@ -1,0 +1,48 @@
+\name{predict.abcrf}
+\alias{predict.abcrf}
+\title{Predict and evaluate the posterior probability of the MAP
+for new data using an ABC-RF object}
+\usage{
+\method{predict}{abcrf}(object, obs, ntree=1000, sampsize=min(1e5, dim(sumsta)[1]), paral=FALSE, ...)
+}
+\description{
+Based on an ABC-RF object this function predicts the best model for
+new data and evaluate the posterior probability of the MAP.
+}
+\arguments{
+\item{object}{an \code{\link{abcrf}} object.}
+\item{obs}{a data frame or a matrix containing the summary statistics of the observed data sets.}
+\item{ntree}{number of trees to grow in the regression forest, by default 1,000 trees.}
+\item{sampsize}{size of the sample from the reference table used to grow a tree
+of the forest, by default the minimum between the number of elements of the reference table and 100,000.}
+\item{paral}{a boolean that indicates if the calculations of the regression random forest
+(forest that returns the posterior probability of the selected model) should be parallelized.
+If yes, the number of CPU cores minus 1 is used.}
+\item{...}{additional arguments to be passed on to \code{\link{randomForest}} used to construct
+the regression random forest that estimates the posterior probability of the selected model.}
+}
+\value{
+  An object of class \code{abcrfpredict}, which is a list with the
+  following components:
+  \item{allocation}{indices of the selected models for each observed data set,}
+  \item{vote}{votes for each observed dataset,}
+  \item{post.prob}{ABC-RF approximations of the posterior probability of the selected model for each observed dataset.}
+}
+\references{
+Pudlo, P., Marin, J.-M., Estoup, A., Cornuet, J.-M., Gautier, M. and Robert C.P. (2016)
+\emph{Reliable ABC model choice via random forests} Bioinformatics
+\url{http://bioinformatics.oxfordjournals.org/content/32/6/859}
+}
+\seealso{
+\code{\link{abcrf}},
+\code{\link{plot.abcrf}},
+\code{\link{err.abcrf}}
+}
+\examples{
+data(snp)
+modindex <- snp$modindex[1:500]
+sumsta <- snp$sumsta[1:500,]
+model.rf <- abcrf(modindex, sumsta, ntree=100)
+data(snp.obs)
+predict(model.rf, snp.obs$sumsta, ntree=100)
+}

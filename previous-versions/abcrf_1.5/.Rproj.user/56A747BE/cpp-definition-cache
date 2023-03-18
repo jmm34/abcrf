@@ -1,0 +1,17 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.5/src/findweightsAmelioree.c",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "findweightsAmelioree(double *, int *, double *, double *, int *, int *, int *, double *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@findweightsAmelioree"
+            }
+        ],
+        "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.5/src/findweightsAmelioree.c",
+        "file_last_write" : 1479911960
+    }
+]

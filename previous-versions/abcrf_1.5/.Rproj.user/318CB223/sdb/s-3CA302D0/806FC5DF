@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{err.regAbcrf}\n\\alias{err.regAbcrf}\n\\title{Calculate and plot for different numbers of tree, the out-of-bag mean squared errors associated with a REG-ABC-RF object}\n\\description{\n\\code{err.regAbcrf} returns out-of-bag mean squared errors and plot them.\n}\n\\usage{\nerr.regAbcrf(object, training, paral=FALSE, \nncores= if(paral) max(detectCores()-1,1) else 1)\n}\n\\arguments{\n  \\item{object}{a \\code{regAbcrf} object.}\n  \\item{training}{the data frame containing the reference table used to train the \\code{\\link{regAbcrf}} object.}\n  \\item{paral}{a boolean that indicates if random forests predictions should be parallelized.}\n  \\item{ncores}{the number of CPU cores to use for the random forest predictions. If paral=TRUE, it is used the number of CPU cores minus 1.}\n}\n\\value{\n  \\item{}{a matrix with 2 colunms: the number of trees and the out-of-bag mean squared errors. NAs might be returned if the number of trees is too low.}\n}\n\\references{\nMarin, J.-M., Raynal, L., Pudlo, P., Ribatet, M. and Robert, C.P. (2016)\n\\emph{ABC random forests for Bayesian parameter inference}\n\\url{http://arxiv.org/pdf/1605.05537v2.pdf}\n}\n\\seealso{\n  \\code{\\link{regAbcrf}},\n  \\code{\\link{predict.regAbcrf}},\n  \\code{\\link{plot.regAbcrf}},\n  \\code{\\link{densityPlot}},\n  \\code{\\link{covRegAbcrf}},\n  \\code{\\link{ranger}}\n}\n\\examples{\n  data(snp)\n  modindex <- snp$modindex\n  sumsta <- snp$sumsta[modindex == \"3\",]\n  r <- snp$param$r[modindex == \"3\"]\n  r <- r[1:500]\n  sumsta <- sumsta[1:500,]\n  data2 <- data.frame(r, sumsta)\n  model.rf.r <- regAbcrf(r~., data2, ntree=100)\n  err.regAbcrf(model.rf.r, data2)\n}",
+    "created" : 1480512724591.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3628800076",
+    "id" : "806FC5DF",
+    "lastKnownWriteTime" : 1480512928,
+    "last_content_update" : 1480512928186,
+    "path" : "~/Dropbox/ODOF/abcrf 1.4 avec ranger/abcrf_1.4/man/err.regAbcrf.Rd",
+    "project_path" : "man/err.regAbcrf.Rd",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

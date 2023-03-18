@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "import(ranger)\nimport(MASS)\nimportFrom(readr, \"read_file\")\nimportFrom(stringr, \"str_extract\", \"str_extract_all\", \"str_match\", \"str_match_all\")\nimportFrom(parallel, \"detectCores\")\nimportFrom(grDevices, \"rainbow\", \"dev.off\")\nimportFrom(graphics, \"legend\", \"lines\", \"par\", \"plot\", \"abline\", \"points\",\"dotchart\")\nimportFrom(stats, \"density\", \"model.frame\", \"model.response\",\"predict\", \"reformulate\", \"terms\")\nimportFrom(utils, \"head\", \"tail\", \"setTxtProgressBar\", \"txtProgressBar\") \nexport(abcrf)\nexport(err.abcrf)\nexport(err.regAbcrf)\nexport(regAbcrf)\nexport(covRegAbcrf)\nexport(densityPlot)\nexport(variableImpPlot)\nexport(readRefTable)\nS3method(abcrf, formula)\nS3method(abcrf, default)\nS3method(plot, abcrf)\nS3method(print, abcrf)\nS3method(predict, abcrf)\nS3method(plot, abcrf)\nS3method(summary, abcrfpredict)\nS3method(print, abcrfpredict)\nS3method(as.matrix, abcrfpredict)\nS3method(as.data.frame, abcrfpredict)\nS3method(as.list, abcrfpredict)\nS3method(regAbcrf, formula)\nS3method(predict, regAbcrf)\nS3method(plot, regAbcrf)\nS3method(covRegAbcrf, regAbcrf)\nS3method(print, regAbcrf)\nS3method(print, regAbcrfpredict)\nS3method(as.matrix, regAbcrfpredict)\nS3method(as.data.frame, regAbcrfpredict)\nS3method(as.list, regAbcrfpredict)\nS3method(densityPlot, regAbcrf)",
+    "created" : 1480521362878.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "790576949",
+    "id" : "C5E65AF",
+    "lastKnownWriteTime" : 1480431361,
+    "last_content_update" : 1480431361,
+    "path" : "~/Dropbox/MLPMC16/abcrf_1.4/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

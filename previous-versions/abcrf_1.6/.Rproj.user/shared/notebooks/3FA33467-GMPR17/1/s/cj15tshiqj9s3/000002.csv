@@ -1,0 +1,10 @@
+"0","library(mvtnorm)"
+"0","library(quantregForest)"
+"2","Le chargement a nécessité le package : randomForest
+"
+"2","randomForest 4.6-12
+"
+"2","Type rfNews() to see new features/changes/bug fixes.
+"
+"2","Le chargement a nécessité le package : RColorBrewer
+"

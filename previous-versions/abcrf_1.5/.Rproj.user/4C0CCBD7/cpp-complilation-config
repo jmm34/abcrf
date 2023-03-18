@@ -1,0 +1,14 @@
+{
+    "args" : [
+        "-ID:/Programmes/RStudio/resources/libclang/builtin-headers/3.4",
+        "-ID:/Rtools/gcc-4.6.3/i686-w64-mingw32/include",
+        "-ID:/Rtools/gcc-4.6.3/include/c++/4.6.3",
+        "-ID:/Rtools/gcc-4.6.3/include/c++/4.6.3/i686-w64-mingw32/64",
+        "-ID:/Programmes/R/R-3.2.3/include",
+        "-DNDEBUG",
+        "-Id:/RCompile/r-compiling/local/local323/include"
+    ],
+    "hash" : "1479743790",
+    "is_cpp" : false,
+    "pch" : ""
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1558033944647.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2379215646",
+    "id" : "1C95A007",
+    "lastKnownWriteTime" : 1558069882,
+    "last_content_update" : 1558069880347,
+    "path" : "F:/These 2016-2017/Recherche/abcrf packages/abcrf_1.8_v3_retournPriorErDansPredictregAbcrf/abcrf/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+        "cursorPosition" : "26,24",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

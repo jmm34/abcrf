@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# test de la fonction readRefTable (DIYABC -> R)\n\nsetwd(\"E:/These/Fonction lecture donn?es DIYABC dans R/human avec rf.bin\")\n\n# charger la fonction readRefTable\nsource(\"E:/These/Fonction lecture donn?es DIYABC dans R/readRefTable.R\")\n\nHumansDataNotRF <- readRefTable(filename = \"reftable.bin\", header = \"header.txt\")\n\nclass(HumansDataNotRF)\nstr(HumansDataNotRF)\n\nHumansData <- readRefTable(filename = \"reftableRF.bin\", header = \"header.txt\")\n\nclass(HumansData)\nstr(HumansData)\n\n# faisons le tri, o? on ne retient que le scenario 2 :\n\nord2 <- HumansData$scenarios==1\nord2 <- HumansData$scenarios==2\nparamScenario2 <- HumansData$params[ord2,]\nsumstaScenario2 <- HumansData$stats[ord2,]\n\ndim(paramScenario2) # on a bien 5053 donn?es et 53 param?tres,\n\n# Est ce que l'on a les bons priors pour nos diff?rents param?tres ?\n\ncolnames(paramScenario2)\n\nsummary(paramScenario2)\nhist(paramScenario2[,\"N1\"]) # ok\nhist(paramScenario2[,\"N2\"]) # ok\nhist(paramScenario2[,\"N3\"]) # ok\nhist(paramScenario2[,\"N4\"]) # ok\nhist(paramScenario2[,\"Nn\"]) # ok\nhist(paramScenario2[,\"Nog\"]) # ok\nhist(paramScenario2[,\"Ncp\"]) # ok\nhist(paramScenario2[,\"tcar\"]) # ok\nhist(paramScenario2[,\"tccp\"]) # ok\nhist(paramScenario2[,\"tcaa\"]) # ok\nhist(paramScenario2[,\"tccpnp\"]) # ok\nhist(paramScenario2[,\"tooa\"]) # ok\nhist(paramScenario2[,\"DBN\"]) # ok\nhist(paramScenario2[,\"NBN\"]) # ok\nhist(paramScenario2[,\"ra1\"]) # ok\nhist(paramScenario2[,\"ra2\"]) # ok\nhist(paramScenario2[,\"ra3\"]) # ok\nhist(paramScenario2[,\"ra4\"]) # ok\nhist(paramScenario2[,\"raa\"]) # ok\n\nhist(paramScenario2[,\"?mic_1\"]) # ok\nhist(paramScenario2[,\"pmic_1\"]) # ok\nhist(paramScenario2[,\"snimic_1\"]) # non, mais je pense que c'est moi qui ne comprend pas pour celui-ci\n\n# de plus, il y a par exemple la condition tccpnp>tcaa qui doit etre verfiees,\n# lorsque que je fais \nparamScenario2[,\"tccpnp\"] - paramScenario2[,\"tcaa\"]\nparamScenario2[,\"tccp\"] - paramScenario2[,\"tcar\"]\n# C'est bon maintenant\n",
+    "created" : 1480000995669.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1271261492",
+    "id" : "881C3BB",
+    "lastKnownWriteTime" : 1479990712,
+    "last_content_update" : 1479990712,
+    "path" : "E:/These/Fonction lecture données DIYABC dans R/human avec rf.bin/testReadRefTable_HUMAN_data.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 17,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

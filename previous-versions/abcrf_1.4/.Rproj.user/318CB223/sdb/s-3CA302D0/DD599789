@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{err.abcrf}\n\\alias{err.abcrf}\n\\title{Calculate and plot for different numbers of tree, the out-of-bag errors associated with an ABC-RF object}\n\\description{\n\\code{err.abcrf} returns out-of-bag errors and plot them.\n}\n\\usage{\nerr.abcrf(object, training, paral=FALSE, ncores= if(paral) max(detectCores()-1,1) else 1)\n}\n\\arguments{\n\\item{object}{an \\code{abcrf} object.}\n\\item{training}{the data frame containing the reference table used to train the \\code{\\link{abcrf}} object.}\n\\item{paral}{a boolean that indicates if random forests predictions should be parallelized.}\n\\item{ncores}{the number of CPU cores to use for the random forest predictions. If paral=TRUE, it is used the number of CPU cores minus 1.}\n}\n\\value{\n\\item{}{a matrix with 2 colunms: the number of trees and the out-of-bag errors}\n}\n\\references{\nPudlo, P., Marin, J.-M., Estoup, A., Cornuet, J.-M., Gautier, M. and Robert, C.P. (2016)\n\\emph{Reliable ABC model choice via random forests} Bioinformatics\n\\url{http://bioinformatics.oxfordjournals.org/content/32/6/859}\n}\n\\seealso{\n\\code{\\link{abcrf}},\n\\code{\\link{predict.abcrf}},\n\\code{\\link{plot.abcrf}}\n}\n\\examples{\ndata(snp)\nmodindex <- snp$modindex[1:500]\nsumsta <- snp$sumsta[1:500,]\ndata1 <- data.frame(modindex, sumsta)\nmodel.rf <- abcrf(modindex~., data1, ntree=100)\nerr.rf <- err.abcrf(model.rf, data1)\n}\n",
+    "created" : 1480511928037.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2187080341",
+    "id" : "DD599789",
+    "lastKnownWriteTime" : 1480512919,
+    "last_content_update" : 1480512920005,
+    "path" : "~/Dropbox/ODOF/abcrf 1.4 avec ranger/abcrf_1.4/man/err.abcrf.Rd",
+    "project_path" : "man/err.abcrf.Rd",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

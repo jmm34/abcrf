@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#include <Rcpp.h>\n\nRcppExport SEXP convolve3cpp(SEXP a, SEXP b){\n  Rcpp::NumericVector xa(a);\n  Rcpp::NumericVector xb(b);\n  int n_xa = xa.size(), n_xb = xb.size();\n  int nab = n_xa + n_xb -1;\n  Rcpp::NumericVector xab(nab);\n  \n  for( int i=0; i< n_xa; i++)\n    for( int j=0; j<n_xb; j++)\n      xab[i+j] += xa[i]*xb[j];\n  return xab;\n}",
+    "created" : 1483710035007.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1122858014",
+    "id" : "56597394",
+    "lastKnownWriteTime" : 1483711662,
+    "last_content_update" : 1483711661503,
+    "path" : "F:/These/Rcpp Test/essai_rcpp.cpp",
+    "project_path" : null,
+    "properties" : {
+        "docOutlineVisible" : "1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

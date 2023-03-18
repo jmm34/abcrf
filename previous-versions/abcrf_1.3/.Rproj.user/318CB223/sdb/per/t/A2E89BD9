@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "regAbcrf.numeric <-\n  function(resp, sumsta, ntree=500, sampsize=min(1e5, length(resp)), paral=FALSE, ... ){\n    if(!is.numeric(resp))\n      stop(\"resp must be a numeric vector\")\n    sumsta <- as.matrix(sumsta)\n    if(length(resp)!=nrow(sumsta))\n      stop(\"length of resp differs from the number of lines in sumsta\")\n    if(length(resp)==0L)\n      stop(\"no simulation in the reference table (resp, sumsta)\")\n    if (is.null(colnames(sumsta))) colnames(sumsta) <- paste(\"V\",1:dim(sumsta)[2],sep=\"\")\n    if (paral==TRUE) {\n      ncores <- max(detectCores()-1,1) \n      cl <- makeCluster(ncores)\n      registerDoParallel(cl)\n      if (trunc(ntree/ncores)==ntree/ncores) ntrees <- rep(ntree/ncores, ncores) else\n        ntrees <- c(rep(trunc(ntree/ncores), ncores),ntree-trunc(ntree/ncores)*ncores)\n      model.rf <- foreach(ntree=ntrees, .combine= combine, .multicombine=TRUE, .packages='randomForest') %dorng% {\n        randomForest(sumsta, resp, ntree=ntree, sampsize=sampsize, keep.inbag=TRUE, ...)\n      }\n      stopCluster(cl)\n      pred.noob <- predict(model.rf, newdata=sumsta, predict.all=TRUE)\n      mat <- pred.noob$individual\n      for( j in 1:model.rf$ntree ){\n        mat[model.rf$inbag[,j]!=0,j] <- NA\n      }\n      model.rf$predicted <- sapply(1:nrow(sumsta), function(x) mean(mat[x,!is.na(mat[x,])]) )\n    } else model.rf <- randomForest(sumsta, resp, ntree=ntree, sampsize=sampsize, keep.inbag = TRUE, ...)\n    cl <- match.call()\n    cl[[1]] <- as.name(\"regAbcrf\")\n    x <- list(call=cl, model.rf = model.rf, sumsta=sumsta)\n    class(x) <- \"regAbcrf\"\n    x\n  }\n\nregAbcrf <-\nfunction(...) UseMethod(\"regAbcrf\")\n\nprint.regAbcrf <-\nfunction(x, ...){\n\n  cat(\"\\nCall:\\n\", deparse(x$call), \"\\n\")\n  cat(\"Number of simulations: \", length(x$model.rf$y), \"\\n\", sep=\"\")\n  cat(\"Number of trees: \", x$model.rf$ntree, \"\\n\", sep=\"\")\n  cat(\"No. of variables tried at each split: \", x$model.rf$mtry, \"\\n\", sep=\"\")\n      \n}",
+    "created" : 1464980783924.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1954697315",
+    "id" : "A2E89BD9",
+    "lastKnownWriteTime" : 1464183528,
+    "last_content_update" : 1464183528,
+    "path" : "~/Dropbox/ODOF/abcrf/R/regAbcrf.R",
+    "project_path" : "R/regAbcrf.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

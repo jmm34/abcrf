@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "abcrf.formula <- function(formula, data, lda=TRUE, ntree=500, sampsize=min(1e5, nrow(data)), paral=FALSE, \n                          ncores= if(paral) max(detectCores()-1,1) else 1, ...) \n{\n  \n  # formula and data.frame check\n  \n  if (!inherits(formula, \"formula\"))\n    stop(\"abcrf.formula is only for formula objects\")\n  if (!inherits(data, \"data.frame\"))\n    stop(\"data needs to be a data.frame object\")\n  if(ncores > detectCores() || ncores < 1)\n    stop(\"incorrect number of CPU cores\")\n  if ( (!is.logical(paral)) && (length(paral) != 1L) )\n    stop(\"paral should be TRUE or FALSE\")\n  \n  # modindex and sumsta recovery\n  \n  mf <- match.call(expand.dots=FALSE)\n  m <- match(c(\"formula\", \"data\"), names(mf))\n  mf <- mf[c(1L,m)]\n  mf[[1L]] <- as.name(\"model.frame\")\n  mf <- eval(mf, parent.frame() )\n  \n  if (!is.factor(model.response(mf)))\n    stop(\"response should be a factor containing the model indexes\")\n  if (nrow(data) == 0L || is.null(nrow(data)))\n    stop(\"no simulation in the reference table (response, sumstat)\")\n  if ( (!is.logical(lda)) && (length(lda) != 1L) )\n    stop(\"lda should be TRUE or FALSE\")\n  \n  if (lda) {\n    model.lda <- lda(formula, data)\n    data <- cbind(data, as.matrix(predict(model.lda, data)$x ))\n    } else { \n    model.lda <- NULL\n  }\n  \n  m <- names(match.call(expand.dots=TRUE))\n  if ((!\"sampsize\" %in% m) && (nrow(data) <= 15)) \n    sampsize <- as.integer(sampsize / 10)\n  if(sampsize > nrow(data))\n    stop(\"sampsize too large\")\n  \n  model.rf <- ranger(formula, data, num.trees=ntree, sample.fraction=sampsize/nrow(data), \n                     num.threads = ncores, keep.inbag = TRUE, importance = 'impurity', ...)\n  \n  # class error computation\n  class.error = vector()\n  for (i in 1:nrow(model.rf$confusion.matrix)) {\n    rowSum <- sum(model.rf$confusion.matrix[i,])\n    accurate <- diag(model.rf$confusion.matrix)[i]\n    error <- rowSum - accurate\n    class.error[i] <- error / rowSum\n  }\n  model.rf$confusion.matrix <- cbind(model.rf$confusion.matrix, class.error)\n  colnames(model.rf$confusion.matrix) <- c(paste(model.rf$forest$levels),\"class.error\")\n  \n  model.rf$model.rf\n  \n  cl <- match.call()\n  cl[[1]] <- as.name(\"abcrf\")\n\n  x <- list(call=cl, lda=lda, formula=formula, model.rf=model.rf, model.lda=model.lda, prior.err=model.rf$prediction.error)\n  class(x) <- \"abcrf\"\n  x\n}\n\nabcrf.default <- function(...) {\n  cl <- match.call()\n  cl[[1]] <- as.name(\"abcrf\")\n  cat(\"call:\\n\")\n  print(cl)\n  stop(\"the first argument should be a formula\")\n}\n  \nabcrf <- function(...) UseMethod(\"abcrf\")\n\nprint.abcrf <- function(x, ...) {\n  cat(\"\\nCall:\\n\", deparse(x$call), \"\\n\")\n  if (x$lda) cat(\"includes the axes of a preliminary LDA\\n\\n\")  \n  cat(\"Number of simulations: \", length(x$model.rf$num.samples), \"\\n\", sep=\"\")\n  cat(\"     Prior error rate: \", round(x$prior.err * 100, digits = 4), \"%\\n\\n\", sep = \"\")\n  cat(\"Confusion matrix:\\n\")\n  print(x$model.rf$confusion, ...)  \n}",
+    "created" : 1479998395914.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1982354923",
+    "id" : "6EC8CC7D",
+    "lastKnownWriteTime" : 1479998564,
+    "last_content_update" : 1479998563341,
+    "path" : "E:/These/abcrf 1.4 avec ranger/abcrf_1.4/R/abcrf.R",
+    "project_path" : "R/abcrf.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

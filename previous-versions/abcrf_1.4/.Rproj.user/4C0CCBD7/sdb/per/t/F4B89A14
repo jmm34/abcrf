@@ -1,0 +1,17 @@
+{
+    "contents" : ".onLoad <-function (lib, pkg) {\n  library.dynam(\"abcrf\", pkg, lib)\n}",
+    "created" : 1479052482618.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1127404772",
+    "id" : "F4B89A14",
+    "lastKnownWriteTime" : 1464183528,
+    "path" : "F:/These/abcrf_sauvegarde_21_11_2016/R/zzzz.R",
+    "project_path" : "R/zzzz.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

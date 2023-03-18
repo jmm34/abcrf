@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# RANTANPLAN\n\nrho <- 0.6\nSigma <- matrix(c(1,rho,rho,1),2,2)\nlibrary(mvtnorm)\n\nN <- 100000\nsimu <- rmvnorm(N,c(0,0),Sigma)\nrhohat <- cor(simu)[1,2]\n\nNSIM <- 100000\nx <- matrix(0,NSIM,2)\nfor (t in 2:NSIM)\n{\n  x[t,1] <- rnorm(1,rhohat*x[t-1,2],sqrt(1-rhohat^2)) \n  x[t,2] <- rnorm(1,rhohat*x[t,1],sqrt(1-rhohat^2))\n}\n\nvar(x[,1])\nmean(x[,1])\n\ncurve(dnorm,add=TRUE,col=\"red\")\n\nlibrary(randomForest)\nlibrary(abcrf)\nlibrary(quantregForest)\n\nmodel1 <- quantregForest(x=data.frame(x2=simu[,2]),y=simu[,1],ntree=1000,nthread=8)\nmodel2 <- quantregForest(x=data.frame(x1=simu[,1]),y=simu[,2])\n\nNSIM <- 2000\nx <- matrix(0,NSIM,2)\nfor (t in 2:NSIM)\n{\n  x[t,1] <- predict(model1, data.frame(x2=x[t-1,2]),what=runif(1)) \n  x[t,2] <- predict(model2, data.frame(x1=x[t,1]),what=runif(1))\n  print(t)\n}\nlulu <- seq(1,NSIM,by=10)\nhist(x[lulu,2],prob=TRUE)\n\n\nmodel1 <- quantregForest(x=data.frame(x2=simu[,2]),y=simu[,1],ntree=5000,nthread=8)\ntest1 <- predict(model1, data.frame(x2=0),what=ecdf)\nplot(test1[[1]],xlim=c(-3,3))\ncurve(pnorm,add=TRUE,col=\"red\")\n\nd <- 3\nn <- 100\nSigma <- matrix(0.5,d,d)\ndiag(Sigma) <- rep(1,d)\nlibrary(mvtnorm)\nX <- rmvnorm(n,rep(0,d),Sigma)\ntheta <- rep(1,d)\n\ny <- as.vector(rmvnorm(1,X%*%theta,diag(n)))\nthetahat <- solve(t(X)%*%X)%*%t(X)%*%y\n\nnsim <- 50000\nthetasim <- matrix(0,nsim,d)\nysim <- matrix(0,nsim,n)\nXXm <- solve(t(X)%*%X)\n\nthetasim <- rmvnorm(nsim,rep(0,d),n*XXm)\nysim <- t(X%*%t(thetasim))+rmvnorm(nsim,rep(0,n),diag(n))\n\nlulu <- XXm%*%t(X)%*%t(ysim)\napp <- cbind(thetasim,t(lulu))\nlibrary(quantregForest)\nmodel1 <- quantregForest(x=app[,-(1:d)],y=app[,1],ntree=1)\nmodel2 <- quantregForest(x=app[,-(2:d)],y=app[,2],ntree=800,nthread=8)\nmodel3 <- quantregForest(x=app[,-(3:d)],y=app[,3],ntree=800,nthread=8)\n\nN <- 1000\nlala1 <- as.vector(predict(model1, t(thetahat),what=runif(N)))\nlala2 <- lala3 <- rep(0,N)\nguillin <- cbind(matrix(rep(thetahat,N),N,byrow=TRUE),lala1)\nfor (i in 1:N) lala2[i] <- as.vector(predict(model2, guillin[i,],what=runif(1)))\nguillin <- cbind(matrix(rep(thetahat,N),N,byrow=TRUE),lala1,lala2)\nfor (i in 1:N) lala3[i] <- as.vector(predict(model3, guillin[i,],what=runif(1)))\n\n\ntest1 <- predict(model1, t(thetahat),what=ecdf)\nplot(test1[[1]],xlim=c(-3,3))\ncurve(pnorm(x,n/(n+1)*thetahat[1],sqrt(n/(n+1)*XXm[1,1])),add=TRUE,col=\"red\")\n\nmodel3g <- model3\nmodel1g <- quantregForest(x=app[,-1],y=app[,1],ntree=800,nthread=8)\nmodel2g <- quantregForest(x=app[,-2],y=app[,2],ntree=800,nthread=8)\n\nT  <- 1000\nx <- matrix(0,T,3)\n\nfor (t in 2:T)\n{\n  x[t,1] <- predict(model1g, c(x[t-1,2],x[t-1,3],thetahat),what=runif(1)) \n  x[t,2] <- predict(model2g, c(x[t,1],x[t-1,3],thetahat),what=runif(1))\n  x[t,3] <- predict(model3g, c(x[t,1],x[t,2],thetahat),what=runif(1))\n  print(t)\n}\n\nplot(ecdf(x[,1]))\n\n",
+    "created" : 1500968870530.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1643798740",
+    "id" : "13AAAB73",
+    "lastKnownWriteTime" : 1498117827,
+    "last_content_update" : 1498117827,
+    "path" : "~/Dropbox/RANTANPLAN/rantanplan.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

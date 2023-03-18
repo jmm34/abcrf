@@ -1,0 +1,80 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/findweights.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "findweights(NumericMatrix, IntegerMatrix, NumericMatrix, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@findweights#$@N@Rcpp@C@Matrix>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#S0_#I#I#I#"
+            }
+        ],
+        "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/findweights.cpp",
+        "file_last_write" : 1498224770
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 5,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrors.cpp",
+                "kind" : 6,
+                "line" : 10,
+                "name" : "which_maxMap(std::map<int, int>)",
+                "parent_name" : "",
+                "usr" : "c:@F@which_maxMap#$@N@std@N@__1@C@map>#I#I#$@N@std@N@__1@S@less>#I#$@N@std@N@__1@C@allocator>#$@N@std@N@__1@S@pair>#1I#I#"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrors.cpp",
+                "kind" : 6,
+                "line" : 22,
+                "name" : "tableC(IntegerVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@tableC#$@N@Rcpp@C@Vector>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#"
+            },
+            {
+                "column" : 15,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrors.cpp",
+                "kind" : 6,
+                "line" : 32,
+                "name" : "oobErrors(IntegerVector, int, IntegerVector, int, IntegerVector, IntegerMatrix, IntegerMatrix)",
+                "parent_name" : "",
+                "usr" : "c:@F@oobErrors#$@N@Rcpp@C@Vector>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#S0_#I#S0_#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#S1_#"
+            }
+        ],
+        "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrors.cpp",
+        "file_last_write" : 1498210180
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrorsReg.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "oobErrorsReg(IntegerVector, int, int, NumericVector, IntegerMatrix, NumericMatrix)",
+                "parent_name" : "",
+                "usr" : "c:@F@oobErrorsReg#$@N@Rcpp@C@Vector>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#I#$@N@Rcpp@C@Vector>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#$@N@Rcpp@C@Matrix>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#"
+            }
+        ],
+        "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/oobErrorsReg.cpp",
+        "file_last_write" : 1498216522
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/predictOob_cpp.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "predictOob_cpp(NumericMatrix, NumericMatrix, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@predictOob_cpp#$@N@Rcpp@C@Matrix>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#S0_#I#I#"
+            }
+        ],
+        "file" : "/Users/jmm/Dropbox/MRPRR16/abcrf_1.6/src/predictOob_cpp.cpp",
+        "file_last_write" : 1498494062
+    }
+]
