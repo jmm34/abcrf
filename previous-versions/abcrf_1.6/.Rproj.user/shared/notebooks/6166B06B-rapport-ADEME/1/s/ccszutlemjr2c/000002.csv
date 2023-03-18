@@ -1,5 +1,0 @@
-"0","montpellier14 <- read.csv(""montpellier-2014.csv"",sep="";"",header=TRUE)"
-"0","montpellier14$date <- strptime(montpellier14$date,""%d/%m/%y %H:%M"")"
-"0","smont14 <- c(2,2,3,2,1,1,1,2,2,3,1,2,2,3,3,4)"
-"0","mo14 <- as.matrix(montpellier14[,-1])"
-"0","mo14 <- xts(mo14,montpellier14$date)"

@@ -1,2 +1,0 @@
-"0","cluster.mont13 <- cutree(hc,4,order_clusters_as_data = FALSE)"
-"0","rect.hclust(hc,k=4,border=1:4)"

@@ -1,1 +1,0 @@
-"0","curve(pnorm(x,n/(n+1)*thetahat[1],sqrt(n/(n+1)*XXm[1,1])),add=TRUE,col=""red"")"

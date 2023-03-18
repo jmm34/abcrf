@@ -1,3 +1,0 @@
-"0","model1.marg <- regAbcrf(theta1~s1+s2+s3,data=app,ntree=5000,paral=TRUE)"
-"2","
-"
